@@ -18,10 +18,7 @@ for entry = 1:length(xindices)
     mask(xindices(entry)) = 0;
     
     % Get the mean of the column without the bad entry
-    column = x(:, yindices(entry));
-    column_mean = mean(column(logical(mask)));
-    
-    % Replace with mean of column
+    column_mean = mean(x(:, ~yindices(entry)));
     x(xindices(entry), yindices(entry)) = column_mean;
     
 end

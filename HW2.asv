@@ -4,8 +4,7 @@
 % of NaN or Inf. 
 
 % Part 1. Run the following code:
-% NOTICE: THIS CODE WILL RUN DIFFERENTLY THAN WHEN THE REPOSITORY WAS
-% CREATED, BECAUSE meannonan.m WAS MODIFIED FOR PART 2 OF THIS PROBLEM.
+
 xx = rand(5); % random 5x5 matrix
 xx(3,2) = NaN; %put a NaN in
 yy = mean(xx); 
@@ -19,23 +18,15 @@ zz = meannonan(xx);
 % Mean is a vectorized built-in MATLAB function. It is designed to return
 % the mean of each column for arrays, and the mean of a vector if given a
 % single vector. yy is just the sum of the columns, as expected.
-%
 % However, zz is only a single number. This is because in the meannonan.m
 % function, when an empty array is used to replace the NaN entry in the
 % inputted matrix, the matrix becomes a row vector of each row in order.
 % This is how MATLAB reacts to being given a matrix array with an empty
-% array inside of it. Then, the mean function at the end only acts on a
-% single vector and thus yields a single mean, as expected.
+% array insi
 
 % Part 2. Modify the meannonan code so that it behaves as the mean function
 % and produces a row vector where each entry is the average of each column
 % and in the column with a NaN, this NaN is ignored. 
-
-% See attached modified function
-xx = rand(5); % random 5x5 matrix
-xx(3,2) = NaN; %put a NaN in
-yy = mean(xx); 
-zz = meannonan(xx);
 
 %% Problem 2. ORFs using functions
 % In this problem we will use functions to simplify and extend our code from HW1, prob 2 

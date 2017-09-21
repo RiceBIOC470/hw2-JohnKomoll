@@ -1,0 +1,87 @@
+function dnaseq = protein2dna(protseq)
+% Input a protein sequence and  returns the corresponding dna sequence.
+
+% Initialize dna sequence
+dnaseq = '';
+
+% Define all combos of base pairs that code for each amino acid
+gly_seq = {'GGG', 'GGT', 'GGA', 'GGC'};
+glu_seq = {'GAG', 'GAA'};
+asp_seq = {'GAT', 'GAC'};
+val_seq = {'GTG', 'GTT', 'GTA', 'GTC'};
+ala_seq = {'GCG', 'GCT', 'GCA', 'GCC'};
+lys_seq = {'AAG', 'AAA'};
+asn_seq = {'AAT', 'AAC'};
+met_seq = {'ATG'};
+ile_seq = {'ATT', 'ATC', 'ATA'};
+thr_seq = {'ACC', 'ACG', 'ACT', 'ACA'};
+trp_seq = {'TGG'};
+end_seq = {'TGA', 'TAG', 'TAA'};
+cys_seq = {'TGT', 'TGC'};
+tyr_seq = {'TAT', 'TAC'};
+phe_seq = {'TTT', 'TTC'};
+ser_seq = {'TCC', 'TCA', 'TCG', 'TCT', 'AGT', 'AGC'};
+arg_seq = {'CGG', 'CGT', 'CGA', 'CGC', 'AGG', 'AGA'};
+gln_seq = {'CAG', 'CAA'};
+his_seq = {'CAT', 'CAC'};
+leu_seq = {'CTG', 'CTC', 'CTA', 'CTT', 'TTG', 'TTA'};
+pro_seq = {'CCC', 'CCG', 'CCT', 'CCA'};
+
+% Iterate through each amino acid
+for index = 1:3:length(protseq)
+    
+    % Define the codon based on the iterated amino acid index
+    amino_acid = protseq(index:index+2);
+    
+    % Add the base pairs for the iterated amino acid to the dna sequence
+    if amino_acid == 'Gly'
+        dnaseq = [dnaseq gly_seq(randi(4))];
+    elseif amino_acid == 'Glu'
+        dnaseq = [dnaseq glu_seq(randi(2))];
+    elseif amino_acid == 'Asp'
+        dnaseq = [dnaseq asp_seq(randi(2))];
+    elseif amino_acid == 'Val'
+        dnaseq = [dnaseq val_seq(randi(4))];
+    elseif amino_acid == 'Ala'
+        dnaseq = [dnaseq ala_seq(randi(4))];
+    elseif amino_acid == 'Arg'
+        dnaseq = [dnaseq arg_seq(randi(6))];
+    elseif amino_acid == 'Ser'
+        dnaseq = [dnaseq ser_seq(randi(6))];
+    elseif amino_acid == 'Lys'
+        dnaseq = [dnaseq lys_seq(randi(2))];
+    elseif amino_acid == 'Asn'
+        dnaseq = [dnaseq asn_seq(randi(2))];
+    elseif amino_acid == 'Met'
+        dnaseq = [dnaseq met_seq(1)];
+    elseif amino_acid == 'Ile'
+        dnaseq = [dnaseq ile_seq(randi(3))];
+    elseif amino_acid == 'Thr'
+        dnaseq = [dnaseq thr_seq(randi(4))];
+    elseif amino_acid == 'Trp'
+        dnaseq = [dnaseq trp_seq(1)];
+    elseif amino_acid == 'End'
+        dnaseq = [dnaseq end_seq(randi(3))];
+    elseif amino_acid == 'Cys'
+        dnaseq = [dnaseq cys_seq(randi(2))];
+    elseif amino_acid == 'Tyr'
+        dnaseq = [dnaseq tyr_seq(randi(2))];
+    elseif amino_acid == 'Leu'
+        dnaseq = [dnaseq leu_seq(randi(6))];
+    elseif amino_acid == 'Phe'
+        dnaseq = [dnaseq phe_seq(randi(2))];
+    elseif amino_acid == 'Gln'
+        dnaseq = [dnaseq gln_seq(randi(2))];
+    elseif amino_acid == 'His'
+        dnaseq = [dnaseq his_seq(randi(2))];
+    elseif amino_acid == 'Pro'
+        dnaseq = [dnaseq pro_seq(randi(4))];
+    end
+    
+end
+
+dnaseq = reshape(
+
+end
+
+
